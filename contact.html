@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - War Archive</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">War Archive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="documents.html">Documents</a>
+                    <a class="nav-link" href="interviews.html">Interviews</a>
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                    <a class="nav-link active" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="heading">
+        <div class="container-fluid p-0">
+            <img src="images/heading.jpg" alt="Header">
+            <div class="centered">
+                <h1>Contact Us</h1>
+                <h3>Get in Touch</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="contact-info-box p-4">
+                        <h3 class="text-danger mb-4">Direct Contact</h3>
+                        <p class="text-muted mb-4">Have questions? We are here to help preserve history.</p>
+                        <hr class="my-4">
+                        <h5>Location</h5>
+                        <p class="text-muted">Liberation War Museum, Dhaka</p>
+                        <h5 class="mt-4">Email</h5>
+                        <p class="text-muted">info@wararchive.bd</p>
+                        <h5 class="mt-4">Phone</h5>
+                        <p class="text-muted">+880 1555-555555</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-5">
+                            <h3 class="mb-4" style="color: var(--primary-green);">Send a Message</h3>
+                            <form id="contactForm" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="nameInput" placeholder="Name" required>
+                                            <label>Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="emailInput" placeholder="Email" required>
+                                            <label>Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="subjectInput" placeholder="Subject" required>
+                                            <label>Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Message" id="messageInput" style="height:150px;" required></textarea>
+                                            <label>Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary px-5 py-3 w-100">Submit Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-auto">
+        <div class="container">
+            © 2025 MD WASI KHAN | Liberation War Archive
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('nameInput').value.trim();
+            let email = document.getElementById('emailInput').value.trim();
+            let subject = document.getElementById('subjectInput').value.trim();
+            let message = document.getElementById('messageInput').value.trim();
+            
+            if (!name || !email || !subject || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+            
+            alert("Thank you! Your message has been sent successfully.");
+            this.reset();
+        });
+    </script>
+</body>
+</html>

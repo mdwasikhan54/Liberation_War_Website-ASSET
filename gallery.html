@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - War Archive</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Gallery Specific Styles for Overlay Effect */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: grayscale(80%); /* Default dark/grayscale look */
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Zoom effect */
+            filter: grayscale(0%); /* Reveal color on hover */
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.85); /* Dark overlay */
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-top: 2px solid var(--primary-red);
+        }
+        
+        .gallery-item:hover .overlay {
+            height: 40%; /* Show overlay on hover */
+        }
+        
+        .overlay-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        /* Custom Tab Styles */
+        .nav-pills .nav-link {
+            background-color: #222;
+            color: #bbb;
+            border: 1px solid #444;
+            margin: 0 5px;
+            border-radius: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-red);
+            color: white;
+            border-color: var(--primary-red);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">War Archive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="documents.html">Documents</a>
+                    <a class="nav-link" href="interviews.html">Interviews</a>
+                    <a class="nav-link active" href="gallery.html">Gallery</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="heading">
+        <div class="container-fluid p-0">
+            <img src="images/heading.jpg" alt="Header">
+            <div class="centered">
+                <h1>Visual History</h1>
+                <h3>Moments Frozen in Time</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            
+            <ul class="nav nav-pills justify-content-center mb-5" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button">Key Moments</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button">Places</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button">People</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/keymoments1.jfif" alt="Key Moment 1">
+                                <div class="overlay">
+                                    <div class="overlay-text">Training Camps</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/keymoments2.webp" alt="Key Moment 2">
+                                <div class="overlay">
+                                    <div class="overlay-text">Victory March</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/keymoments3.webp" alt="Key Moment 3">
+                                <div class="overlay">
+                                    <div class="overlay-text">Refugees Return</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/places1.webp" alt="Place 1">
+                                <div class="overlay">
+                                    <div class="overlay-text">Race Course Maidan</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/places2.webp" alt="Place 2">
+                                <div class="overlay">
+                                    <div class="overlay-text">Martyrs' Memorial</div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/places3.jpg" alt="Place 3">
+                                <div class="overlay">
+                                    <div class="overlay-text">Mujibnagar Complex</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/people1.jpg" alt="People 1">
+                                <div class="overlay">
+                                    <div class="overlay-text">Sheikh Mujibur Rahman</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/people2.jpg" alt="People 2">
+                                <div class="overlay">
+                                    <div class="overlay-text">Bir Sreshtho Matiur</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="gallery-item">
+                                <img src="images/people3.jpg" alt="People 3">
+                                <div class="overlay">
+                                    <div class="overlay-text">General Osmani</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-auto">
+        <div class="container">
+            © 2025 MD WASI KHAN | Liberation War Archive
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
