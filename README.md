@@ -33,7 +33,7 @@ To view and run this project locally, follow these simple steps.
     Open your terminal or command prompt and execute the following command:
 
     ```bash
-    git clone [https://github.com/mdwasikhan54/Liberation_War_Website-ASSET.git](https://github.com/mdwasikhan54/Liberation_War_Website-ASSET.git)
+    git clone https://github.com/mdwasikhan54/Liberation_War_Website-ASSET.git
     ```
 
 2.  **Open the File**
